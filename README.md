@@ -2,17 +2,17 @@
 
 This is a complete Application Review System made using Django and Boostrap. It has all the features required for an ARS. 
 
+## Demo 
+![Demo 1](https://github.com/arkalsekar/application-review-sys/blob/main/static/demo1.JPG?raw=true)
+
 
 ## Characteristics
 
 Here are the Features of the Application created.
-<br>
+</br>
 1. Complete User Authentication and Autherization using Django
-<br>
 2. Each User can only Fill Application once
-<br>
 3. He can Later Track his Application via provided Application ID
-<br>
 4. Status Will be Shown whether his Application has been acccepted or rejected by the Admin. 
 
 ## Setting Up
