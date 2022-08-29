@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block statusActive %} active {% endblock statusActive %}
+{% block body %}
+
+<div class="container my-4">
+<h2> Check Your Application Status here</h2>
+
+<form action="/get_status" method="GET">
+{% comment %} {% csrf_token %} {% endcomment %}
+<div class="mb-3">
+  <label for="Applicationid" class="form-label my-3">Enter your Application ID </label>
+  <input type="text" onkeypress='validate(event)' maxlength="6"  class="form-control" id="Applicationid" name="Applicationid" placeholder="Enter your 6 Digit Application ID">
+
+</div>
+
+<button type="submit" class="btn btn-danger"> Check Status</button>
+</form>
+
+{% if no_status == False %}
+<h3> No Application with such Applicationid Found  </h3>
+{% endif %}
+
+
+{% if status %}
+{% for i in status %}
+{% if i.accepted == False %}
+<h3> Your Application has not been Accepted by the Admin panel </h3>
+{% endif %}
+
+{% if i.accepted == True %}
+<h3> Congratulations!! Your Application has been Accepted by the Admin panel </h3>
+{% endif %}
+
+
+{% endfor %}
+{% endif %}
+
+</div>
+
+{% comment %}  
+To Avoid Trash characters user inputing in the Application Id Field. 
+Also to put a limit for number of characters 
+{% endcomment %}
+<script>
+function validate(evt) {
+  var theEvent = evt || window.event;
+
+  // Handle paste
+  if (theEvent.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+  } else {
+  // Handle key press
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode(key);
+  }
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
+{% endblock body %}
