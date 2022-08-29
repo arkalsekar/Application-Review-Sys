@@ -5,6 +5,11 @@ This is a complete Application Review System made using Django and Boostrap. It 
 ## Demo 
 ![Demo 1](https://github.com/arkalsekar/application-review-sys/blob/main/static/demo1.JPG?raw=true)
 
+![Demo 2](https://github.com/arkalsekar/application-review-sys/blob/main/static/demo2.JPG?raw=true)
+
+
+![Demo 3](https://github.com/arkalsekar/application-review-sys/blob/main/static/demo3.JPG?raw=true)
+
 
 ## Characteristics
 
